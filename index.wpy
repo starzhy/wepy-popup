@@ -1,0 +1,135 @@
+
+<style lang="less">
+.popup {
+    .popup-cont {
+        background: #fff;
+        width: 100%;
+        box-sizing: border-box;
+        position: fixed;
+        z-index: 3;
+        padding: 50rpx 20rpx 120rpx;
+        opacity: 1;
+
+        &.bottom{
+            bottom: 0; 
+            left: 0;
+            transform: translateY(110%);
+        }
+        &.top{
+            top:0;
+            left:0;
+            transform: translateY(-110%);
+
+        }
+        &.center{
+            top: 50%;
+            left:50%;
+            opacity: 0;
+            transform: translate(-50%,-50%);
+        }
+        &.hide{
+            display: none;
+        }
+        &.show{
+            display: block;
+        }
+    }
+    .ico {
+        &.close {
+            position: absolute;
+            right: 24rpx;
+            top: 24rpx;
+            width: 46rpx;
+            height: 46rpx;
+            z-index: 3;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAMAAAD04JH5AAAABGdBTUEAALGPC/xhBQAAAMBQTFRFqampqKioqampqKioqampqampqKioqampqampqampqampqampqampqampqampqampqampqampqampqampqampqKioqKioqKioqampqKiorKysqampqKioqamplJSUqampqampqamprKysqampqampqqqqqqqqqampqampqampqqqqqampqqqqqampqampqampq6urrKysqKioqampqampqqqqqampra2tqqqqrKysqampqqqqqKioqampAAAAqampKM7K3AAAAD90Uk5Tb5qna4163bbidk3BgEHryfCjFnLV0M6r2Z0IzOWHAcU1aBFkuRwi3zuxUvMwlA7oKhnTR74l9wpcBPxXYf4AUTBKIAAABYVJREFUeNrNW+diskAQvCQaYzcx9oKxYFcUBbHt+7/Vd7Z4WI5rkG/+hjADHnu7c7toLwLdzL4sKt/d6RBgOO3OK4uXrKkL3Qrx/oMdG+fgMazc2Cz7K8DIti2gwoq8Lf0SsEwUgQnzsK5egB6eAwfy0Y5SAY02cKM/UiYguQAhRBpKBCQ1EEa7IS1g9goy2JWaUgLqKAOSSG0lBIxyoADaUlCAU1uDEljRuogAPQ/KEP/iF9AagkJkYpwCyn1QjDGXADsNyhFx2AV8zcEHxG1WAZ0u+ILKhE3Asgo+Yf7FImDmGz9WYHsLaBbBR8QdLwHlHPiKfp0uwFmAz/ikC/gE3xGmCdj6zw/r3nMBuhWAAJhOnglwviEQRJ4JGENAQI8FmBAYjEcCnI/gBGiPBNQgQKzuBSzXQQpI2XcCNAgU41sBG/qnO5hNehUuhtKorGcpfx/dCKDugdUmd5xunYra5xcU3ALoL2Bwvpi9Rt56hxbDJYAaA63LJm4z5oq7LUNseSUFDOgr4JqtdrmeHxd3lKuWhACPLGR2zRdTzL//qbzxzAyOAnoedwwR9arF/v5xdU1b21bzV8ALR+w2OZ5//0O98uciwPF8r9Xrj7BfMT//frPz3hGQ5xI8okgkEWFF/ACds4ACw8JKExZoSRH/MT3EAmymRCxC5NN9NfxQPAnYcOfTTloJ/zEUINobdaN2vfukqIT/8B1gAcyZ0Bu1gBTgP+xIaK+zm34DooQeKuCH1EFAS6ym6FnP4j87/yErQEwf4QVDIiTG1ndRjZsfslgAlx0y7Tyu4wT58Z6MHL5c7p3wfmvS/JDfI4Mzm8zb97W0MD9YezTgFACLq8lRX9zxr3Z8d5uhMHdGXSD8xLwkPySRgCVBmJ7NDzl+aKG4QFURJSyFlpy/UUNCptTqoevK//y4fkFCrtzaVMQPfSRWlFsNNfwQRykhAZBZKuGHORL1pcg8VZwfqki4wP52na+I3sUSF+A6jvsWFyC4BnYrNRZ7CnVV8OMMSfCE8x3NlfBjL0JsNeeQpoYfF41CLpeG2or4vYrGZ/UOEjgdJ/m3RECKCgj4RNz+5G5D8u8+vqTM5gTayvG7D6IK/G8T9ST5XTka/4lPAzVl+e9zNB7YaJ+R5Xd5SM13Lv4pLkw0aX5X2dqZcqXYWMBYnt9Vtho8jQc1LGAgz08vW2kwsQB7Lc9/U7YyJydr52BQpBXwu8vWN+aM8OiQ1FTw442VcPISjALCRwGmEn63k8dYb/WOApyhEn6Xk1ePMEWB+smofFHD73LyyiwrK3R2SpNea5WRH+9tHk7enUN0dsvp1dF6wMrvSpW989T3X7ue/h1w1b9Ex5RheX8DZwEGPVwzP/9N0eiVIXWuRzYa2zNtGUIcUTROPApj4syItgyXnP5D95qjTT2X4O+xXZ62X3A8/7HgveRoZXo+7Do3NL0dIfbk8bJq6Ptsw310W6HGS876t3AxsCho35wdx2iGrl4elYAHld5kNqiyvIDr8X0EAkXprn+gYwXJn2net3CEgxTQetTE8h4cf+VhG08yOAGjx41MoaD4o89auXLB8C/+upmt+bydbxMA/65Ha2gs+S8g8cctna8eTa123l/+dv1v23q18v/f2Ixd16lv/Eyt3f41t+cZm9txw5Qv3a0L5vZ+nFBX1PP3OQYc8Nf4xyMehyYopftCyuQf81kqnPNoC4z54LAc2qmht5DoqFdDydcQ18WH3Zys9LjTdCU57if3OazHE+mBR1MiUWMY+2QZ+TQ1IfZd31A29Jrkb3NYFwymW7OO/RoJrjwhnZ2pH3we1Rh3SfahY/7R72jcI0IP+z8drltyD79PBqVn4WlYCSX9n74/7ROxaIkc/0+3x2/JjtCt/gHacWV/dUOmjQAAAABJRU5ErkJggg==)
+        }
+    }
+    .mask {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: 2;
+        display: none;
+        background: rgba(0,0,0,.5);
+
+    }
+}
+</style>
+<template>
+<view class="popup {{className}}">
+    <view class="mask" @tap="close" style="display:{{ visibility=='visible'? 'block':'none'}}"></view>
+    <view class="popup-cont {{type}} {{ visibility=='visible'? 'show':'hide'}}" animation="{{animationData}}">
+        <view class="ico close"  @tap="close"></view>
+        <slot name="content"></slot>
+    </view>
+</view>
+</template>
+<script>
+import wepy from 'wepy';
+export default class popup extends wepy.component {
+    props = {
+        visibility: {
+            type: String,
+            default: '',
+            twoWay: true,
+        },
+        className: {
+            type: String,
+            default: '',
+        },
+        type:{
+            type: String,
+            default: 'bottom',
+        },
+
+    }
+    data = {
+        animationData: {}
+    }
+    methods = {
+        close() {
+            this.visibility = 'hidden';
+        }
+    }
+    watch = {
+        visibility(newValue, oldValue) {
+            if (newValue === 'visible') {
+                this._show();
+                this.$emit('onShow');
+            } else {
+                this._hide();
+                this.$emit('onHide')
+            }
+        }
+    }
+    _show() {
+        this.type==='center' ? this.animation.opacity(1).step() : this.animation.translateY(0).step();
+        this.animationData = this.animation.export();
+        this.$apply();
+    }
+    _hide() {
+        const distance = this.type=='top' ? '-110%':'110%';
+        this.type==='center' ? this.animation.opacity(0).step() : this.animation.translateY(distance).step()
+        this.animationData = this.animation.export();
+        this.visibility = 'hidden';
+        this.$apply();
+    }
+    onLoad() {
+        const animation = wx.createAnimation({
+            duration: 400,
+            timingFunction: 'ease',
+        })
+        this.animation = animation;
+        if(this.visibility=='visible'){
+            this._show();
+            this.$emit('onShow');
+        }
+
+    }
+}
+</script>
