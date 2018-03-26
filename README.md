@@ -2,9 +2,6 @@
 
 
 
-## 示例效果图
-![效果图](http://f2er.meitu.com/zhy/npm_images/wepy-popup-eg.png)
-
 
 ```sh
 
@@ -47,3 +44,6 @@ components = {
 
   //弹窗内容 通过slot='content' 传入
 ```
+
+## 示例效果图
+![效果图](http://f2er.meitu.com/zhy/npm_images/wepy-popup-eg.png)
