@@ -1,9 +1,12 @@
 # wepy-popup
 
-```sh
-npm i @meitu/wepy-popup --save
 
-import popup from '@meitu/wepy-popup';
+
+## 示例效果图
+![效果图](http://f2er.meitu.com/zhy/npm_images/wepy-popup-eg.png)
+
+
+```sh
 
 <popup
     :visibility.sync="{{visibility}}"
@@ -44,8 +47,3 @@ components = {
 
   //弹窗内容 通过slot='content' 传入
 ```
-## gitlab
-[gitlab](https://gitlab.meitu.com/npm/wepy-components)
-
-## 示例效果图
-![效果图](http://f2er.meitu.com/zhy/npm_images/wepy-popup-eg.png)
